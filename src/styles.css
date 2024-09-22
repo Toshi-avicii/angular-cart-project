@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Red Hat Text", sans-serif;
+}
+
+:root {
+    --primary-red: hsl(14, 86%, 42%);
+    --primary-green: hsl(159, 69%, 38%);
+    --rose-50: hsl(20, 50%, 98%);
+    --rose-100: hsl(13, 31%, 94%);
+    --rose-300: hsl(14, 25%, 72%);
+    --rose-400: hsl(7, 20%, 60%);
+    --rose-500: hsl(12, 20%, 44%);
+    --rose-900:  hsl(14, 65%, 9%);
+    --weight-400: 400;
+    --weight-600: 600;
+    --weight-700: 700;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--primary-red);
+    border-radius: 8px;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    background-color: var(--rose-100);
+}
+
+section {
+    display: grid;
+    width: 85vw;
+    padding: 1rem 0px;
+    grid-template-columns: 2fr 1fr;
+}
+
+@media screen and (max-width: 576px) {
+    section {
+        width: 100vw;
+        grid-template-columns: 1fr;
+    }
+}

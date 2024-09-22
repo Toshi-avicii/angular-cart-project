@@ -1,0 +1,20 @@
+<div class="individual-dish">
+    <div class="dish-view">
+        <img [src]="dish.image.desktop" [alt]="dish.name" width="250" height="250">
+        <small class="dish-category">{{ dish.category }}</small>
+        <p class="dish-name">{{ dish.name }}</p>
+        <p class="dish-price">${{ dish.price.toFixed(2) }}</p>
+        @if (filteredCartItems.length === 0) {
+            <div class="add-to-cart-btn" (click)="addToCart()">
+                <img src="images/icon-add-to-cart.svg" alt="cart">
+                <span>Add To Cart</span>
+            </div>
+        } @else {
+            <div class="btn-container add-to-cart-btn">
+                <button (click)="addToCart()">+</button>
+                <small>{{ filteredCartItems.length }}</small>
+                <button (click)="removeFromCart()">-</button>
+            </div>
+        }
+    </div>
+</div>

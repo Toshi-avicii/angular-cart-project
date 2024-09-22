@@ -1,0 +1,105 @@
+.dish-view {
+    position: relative;
+}
+
+.dish-view:hover > img {
+    border: 2px solid var(--primary-red);
+}
+
+.dish-view > img {
+    border-radius: 0.5rem;
+    border: 2px solid transparent;
+}
+
+.dish-view > img:hover {
+    border: 2px solid var(--primary-red);
+}
+
+.dish-category {
+    display: block;
+    color: rgb(154, 153, 153);
+    margin: 0.5rem 0;
+}
+
+.dish-name {
+    font-weight: var(--weight-600);
+    margin-bottom: 0.25rem;
+}
+
+.dish-price {
+    font-weight: var(--weight-700);
+    color: var(--primary-red);
+}
+
+.add-to-cart-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    border: 1px solid black;
+    position: absolute;
+    top: 70%;
+    left: 23%;
+    background-color: white;
+    /* transform: translate(-50%, -50%); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.add-to-cart-btn span {
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-size: 12px;
+    font-weight: var(--weight-600);
+}
+
+.add-to-cart-btn img {
+    width: 15px;
+    height: 15px;
+}
+
+.add-to-cart-btn.btn-container {
+    background-color: var(--primary-red);
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-to-cart-btn.btn-container button {
+    border: 1px solid white;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.add-to-cart-btn.btn-container small {
+    display: inline-block;
+    margin: 0px 16px;
+}
+
+@media screen and (max-width: 576px) {
+    .individual-dish {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 1rem 0;
+    }
+
+    .dish-view > img {
+        width: 90vw;
+    }
+
+    .add-to-cart-btn {
+        left: 32%;
+    }
+}

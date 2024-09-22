@@ -1,0 +1,27 @@
+<div class="modal-bg-container">
+    <div class="modal-bg" (click)="setModalVisibility()"></div>
+    <div class="modal">
+        <div class="modal-header">
+            <img src="images/icon-order-confirmed.svg" alt="order-confirmed">
+            <h1>Order Confirmed</h1>
+            <p>We hope you enjoy your food!</p>
+        </div>
+        <div class="modal-body">
+            <div class="cart-item-container">
+                @if(cart.length > 0) {
+                    @for (item of filterUniqueCartItems; track $index) {
+                        <app-cart-item [cartItem]="item" [viewInModal]="true" />
+                        <hr>
+                    }
+                }
+                <div class="cart-total">
+                    <small>Order Total</small>
+                    <h1>${{ totalPrice }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button>Start New Order</button>
+        </div>
+    </div>
+</div>

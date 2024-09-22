@@ -1,0 +1,34 @@
+<section class="cart-box">
+    <h1>Your Cart ({{ itemsInTheCart.length }})</h1>
+    @if (cart.length === 0) {
+        <div class="empty-cart">
+            <img src="images/illustration-empty-cart.svg" alt="empty-cart" />
+            <small>Your added items will appear here</small>
+        </div>
+    } 
+    
+    <div class="cart-item-container">
+        @if(cart.length > 0) {
+            @for (item of filterUniqueCartItems; track $index) {
+                <app-cart-item [cartItem]="item" [viewInModal]="false" />
+                <hr>
+            }
+        }
+    </div>
+
+    <div class="cart-total">
+        <small>Order Total</small>
+        <h1>${{ totalPrice }}</h1>
+    </div>
+
+    <div class="receipt">
+        <img src="images/icon-carbon-neutral.svg" />
+        <small>
+            This is a <b>carbon-neutral</b> delivery
+        </small>
+    </div>
+
+    <button class="order-btn" (click)="setModalVisibility()">
+        Confirm Order
+    </button>
+</section>

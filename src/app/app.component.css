@@ -1,0 +1,17 @@
+.dish-box {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+@media screen and (max-width: 576px) {
+    .dish-box {
+        grid-template-columns: 1fr;
+    }
+
+    .cart {
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+}

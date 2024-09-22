@@ -1,0 +1,38 @@
+@if (!viewInModal) {
+<div class="cart-item">
+  <div class="cart-info">
+    <small>{{ filteredCartItems?.name }}</small>
+    <div class="cart-misc">
+      <small>{{ itemCount }}x</small>
+      <small>&#64;${{ filteredCartItems?.price }}</small>
+      <small>${{ cartItemPrice }}</small>
+    </div>
+  </div>
+
+  <div class="remove-entry">
+    <button (click)="removeEntireEntryFromCart()">
+      <img src="images/icon-remove-item.svg" alt="remove-item">
+    </button>
+  </div>
+</div>
+} @else {
+<div class="modal-cart-item">
+  <div class="modal-cart-info">
+    <div class="modal-cart-item-img">
+      <img [src]="filteredCartItems?.image?.thumbnail" [alt]="filteredCartItems?.name">
+    </div>
+
+    <div class="modal-cart-item-info">
+      <small>{{ filteredCartItems?.name }}</small>
+      <div class="cart-misc">
+        <small>{{ itemCount }}x</small>
+        <small>&#64;${{ filteredCartItems?.price }}</small>
+      </div>
+    </div>
+
+    <div class="modal-cart-item-total-price">
+      <p>${{ cartItemPrice.toFixed(2) }}</p>
+    </div>
+  </div>
+</div>
+}
